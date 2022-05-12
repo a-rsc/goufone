@@ -1,7 +1,5 @@
 <?php
 
-require('./goufone.php');
-
 /**
  * Hola,
  * T'envio el plantejament de la prova.
@@ -27,46 +25,7 @@ Si tens cap dubte, comentem-ho.
  *
  */
 
+// $input = ['Ontario', new stdClass, 'mike', 'papa', 'leptoN', ['arr1','arr2','arr3'], 1, 'interferon', 2, 'delta', new StdClass, '1', ['arr4','arr5','arr6'], '0', '2', 0, 1, 4];
+
 $input = ['ONaaaaTario', new stdClass, 'mike', 'papa', 'leptoN', ['arr1','arr2','arr3'], 1, 'interferon', 2, 'delta', new StdClass, '1', ['Onaaaatario','arr5','arr6'], '0', '2', 0, 1, 4];
-
-print_r($input);
-
-// 1. Ordenar (+inversament)
-// Inversament
-$input_reverse = array_reverse($input);
-
-// 2. Ordenar per tipus (+inversament) SORT_REGULAR
-// Normal
-$input_sort_by_type = $input;
-sort($input_sort_by_type);
-// Inversament
-$input_reverse_by_type = array_reverse($input_sort_by_type);
-
-// $type = 'string';
-$type = 'integer';
-// $type = 'array';
-// $type = 'object';
-
-// 3. Filtrar per tipus (+inversament)
-print_r(array_filter($input, function($var) use($type) {
-    return goufone_array_filter_by_type($var, $type);
-}));
-
-// 4. Barrejar (Reordenar aleatòriament)
-$input_rand = array_rand($input);
-
-// 5. Resetejar al contingut a l'array original
-// unset($input);
-// $input = array();
-
-// 6. Eliminar tots els elements que no continguin més de 3 caràcters entre 'n' i 't' (minúscules o majúscules)
-print_r(array_filter($input, function($var) {
-    return goufone_substr_more_than_3_characters_between_n_t($var);
-}));
-
-
-
-
-// print_r($input_sort);
-// print_r($input_reverse);
 
