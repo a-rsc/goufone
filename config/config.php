@@ -1,13 +1,14 @@
 <?php
 
+// https://www.php.net/manual/es/function.gettype.php
 $types_of_a_variable = [
-    'boolean', 'integer', 'double', 'string', 'array', 'object', 'resource', 'NULL', 'unknown type',
+    'boolean', 'integer', 'double', 'string', 'array', 'object', 'resource', 'null', 'unknown type',
 ];
 
 $options = [
     [
         'order' => 1,
-        'question' => 'Ordenar original (el mateix input)',
+        'question' => 'Ordenar (el mateix input)',
     ],
     [
         'order' => 2,
@@ -35,10 +36,10 @@ $options = [
     ],
     [
         'order' => 8,
-        'question' => 'Resetejar al contingut a l\'array original',
+        'question' => 'Resetejar l\'input',
     ],
     [
         'order' => 9,
-        'question' => 'Eliminar tots els elements que no continguin més de 3 caràcters entre \'n\' i \'t\' (minúscules o majúscules',
+        'question' => 'Eliminar tots els elements que no continguin més de 3 caràcters entre \'n\' i \'t\' (minúscules o majúscules)',
     ],
 ];

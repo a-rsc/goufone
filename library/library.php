@@ -22,18 +22,18 @@ function goufone_option_4(array $input): array
     return array_reverse(goufone_option_3($input));
 }
 
-function goufone_option_5(array $input, string $type = 'string'): array
+function goufone_option_5(array $input, string $type, $types_of_a_variable): array
 {
-    return ($type === 'string' OR $type === 'integer' OR $type === 'array' OR $type === 'object')
+    return in_array($type, $types_of_a_variable)
         ? array_filter($input, function($var) use($type) {
             return goufone_array_filter_by_type($var, $type);
         })
         : array();
 }
 
-function goufone_option_6(array $input, string $type = 'string'): array
+function goufone_option_6(array $input, string $type, $types_of_a_variable): array
 {
-    return array_reverse(goufone_option_5($input, $type));
+    return array_reverse(goufone_option_5($input, $type, $types_of_a_variable));
 }
 
 function goufone_option_7(array $input): array
@@ -64,7 +64,9 @@ function goufone_option_9(array $input): array
  */
 function goufone_array_filter_by_type(mixed $var, string $type): bool
 {
-    return gettype($var) === $type;
+    // if ($type === 'null') $type = 'NULL';
+    // return gettype($var) === $type;
+    return strcasecmp($var, $type) == 0;
 }
 
 /**
@@ -97,4 +99,3 @@ function goufone_substr_more_than_3_characters_between_n_t(mixed $var): bool
 
     return ! empty($matches);
 }
-

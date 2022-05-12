@@ -27,5 +27,4 @@ Si tens cap dubte, comentem-ho.
 
 // $input = ['Ontario', new stdClass, 'mike', 'papa', 'leptoN', ['arr1','arr2','arr3'], 1, 'interferon', 2, 'delta', new StdClass, '1', ['arr4','arr5','arr6'], '0', '2', 0, 1, 4];
 
-$input = ['ONaaaaTario', new stdClass, 'mike', 'papa', 'leptoN', ['arr1','arr2','arr3'], 1, 'interferon', 2, 'delta', new StdClass, '1', ['Onaaaatario','arr5','arr6'], '0', '2', 0, 1, 4];
-
+$input = ['ONaaaaTario', new stdClass, NULL, true, 'leptoN', ['arr1','arr2','arr3'], 1, 'interferon', 2, 'delta', new StdClass, '1', ['Onaaaatario','arr5','arr6'], '0', '2', 0, 1, 4];
