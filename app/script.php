@@ -1,10 +1,11 @@
 <?php
 
 require '../config/config.php';
+
 require './1stPart.php';
-require '../library/library.php';
 
 // 1stPart - terminal
+// require '../library/library.php';
 // require '../library/cli.php';
 
 // 2ndPart - test
