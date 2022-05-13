@@ -1,18 +1,15 @@
 <?php
 
-define('AUTHOR', 'Álvaro Rodríguez Santa Cruz');
-
 require '../config/config.php';
 require './1stPart.php';
 require '../library/library.php';
 
 // 1stPart - terminal
-// require '../library/cli.php';
+require '../library/cli.php';
 
 // 2ndPart - test
-require '../library/Test.php';
+require '../library/classes/Test.php';
 
-// Test run
 $test = new Test($input);
 
 echo $test->reset()->shuffle()->filterByType('string', TRUE)->sortByType(TRUE);

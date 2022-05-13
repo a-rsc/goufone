@@ -22,18 +22,18 @@ function goufone_option_4(array $input): array
     return array_reverse(goufone_option_3($input));
 }
 
-function goufone_option_5(array $input, string $type, $types_of_a_variable): array
+function goufone_option_5(array $input, string $type): array
 {
-    return in_array($type, $types_of_a_variable)
+    return in_array($type, PHP_TYPES_OF_A_VARIABLE)
         ? array_filter($input, function($var) use($type) {
             return goufone_array_filter_by_type($var, $type);
         })
         : array();
 }
 
-function goufone_option_6(array $input, string $type, $types_of_a_variable): array
+function goufone_option_6(array $input, string $type): array
 {
-    return array_reverse(goufone_option_5($input, $type, $types_of_a_variable));
+    return array_reverse(goufone_option_5($input, $type));
 }
 
 function goufone_option_7(array $input): array

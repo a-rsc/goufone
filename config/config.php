@@ -1,9 +1,8 @@
 <?php
 
+define('AUTHOR', 'Álvaro Rodríguez Santa Cruz');
 // https://www.php.net/manual/es/function.gettype.php
-$types_of_a_variable = [
-    'boolean', 'integer', 'double', 'string', 'array', 'object', 'resource', 'null', 'unknown type',
-];
+define('PHP_TYPES_OF_A_VARIABLE', ['boolean', 'integer', 'double', 'string', 'array', 'object', 'resource', 'null', 'unknown type',]);
 
 $options = [
     [

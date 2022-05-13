@@ -25,13 +25,13 @@ do {
         {
             do {
                 echo PHP_EOL;
-                echo chr(9) . chr(9) . 'Per quin tipus de variable vols filtrar [' . implode('|', $types_of_a_variable) . ']: ';
+                echo chr(9) . chr(9) . 'Per quin tipus de variable vols filtrar [' . implode('|', PHP_TYPES_OF_A_VARIABLE) . ']: ';
 
                 $subline = fgets($handle);
                 $subline = strtolower(trim($subline));
-            } while (! in_array($subline, $types_of_a_variable));
+            } while (! in_array($subline, PHP_TYPES_OF_A_VARIABLE));
 
-            $output = call_user_func("goufone_option_{$line}", $input, $subline, $types_of_a_variable);
+            $output = call_user_func("goufone_option_{$line}", $input, $subline);
         }
         else
         {
@@ -47,3 +47,5 @@ echo PHP_EOL;
 echo chr(9) . 'Moltes gràcies, ' . constant('AUTHOR') . '...' . PHP_EOL;
 
 echo PHP_EOL;
+
+die();

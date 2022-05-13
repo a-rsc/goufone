@@ -4,9 +4,6 @@ class Test
 {
     private array $original, $input;
     private string $pattern = '/n.{4,}t/i';
-    private array $types_of_a_variable = [
-        'boolean', 'integer', 'double', 'string', 'array', 'object', 'resource', 'null', 'unknown type',
-    ];
 
     public function __construct(array $input) {
         $this->original = $input;
@@ -14,7 +11,7 @@ class Test
     }
 
     public function __toString() {
-        echo '---- array content is:';
+        echo '---- Array content is:';
         echo PHP_EOL;
 
         return print_r($this->input, TRUE);
@@ -71,7 +68,7 @@ class Test
         echo $reverse ? ' (inverse)' : NULL;
         echo PHP_EOL;
 
-        $this->input = in_array($type, $this->types_of_a_variable)
+        $this->input = in_array($type, PHP_TYPES_OF_A_VARIABLE)
             ? array_filter($this->input, function($var) use($type) {
                 return strcasecmp(gettype($var), $type) == 0;
             })
