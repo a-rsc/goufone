@@ -2,11 +2,11 @@
 
 class Test
 {
+    private array $original, $input;
+    private string $pattern = '/n.{4,}t/i';
     private array $types_of_a_variable = [
         'boolean', 'integer', 'double', 'string', 'array', 'object', 'resource', 'null', 'unknown type',
     ];
-
-    private array $original, $input;
 
     public function __construct(array $input) {
         $this->original = $input;
@@ -85,7 +85,7 @@ class Test
     }
 
     public function filterByRegex() {
-        echo __FUNCTION__;
+        echo __FUNCTION__ . " '{$this->pattern}'";
         echo PHP_EOL;
 
         $this->input = array_filter($this->input, function($var) {
@@ -96,12 +96,11 @@ class Test
     }
 
     private function goufone_substr_more_than_3_characters_between_n_t(mixed $var): bool {
-        $pattern = '/n.{4,}t/i';
         $matches = array();
 
         if (strcasecmp(gettype($var), 'string') == 0)
         {
-            preg_match($pattern, $var, $matches);
+            preg_match($this->pattern, $var, $matches);
         }
         else if (strcasecmp(gettype($var), 'array') == 0)
         {
@@ -109,7 +108,7 @@ class Test
             {
                 if (strcasecmp(gettype($var), 'string') == 0)
                 {
-                    preg_match($pattern, $value, $matches);
+                    preg_match($this->pattern, $value, $matches);
 
                     if (! empty($matches)) break;
                 }
