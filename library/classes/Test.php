@@ -17,7 +17,12 @@ class Test
         return print_r($this->input, TRUE);
     }
 
-    public function reset() {
+    /**
+     * Reset
+     *
+     * @return Test
+     */
+    public function reset(): Test {
         echo '############## With execution stack:';
         echo PHP_EOL;
         echo __FUNCTION__;
@@ -28,7 +33,12 @@ class Test
         return $this;
     }
 
-    public function shuffle() {
+    /**
+     * Shuffle
+     *
+     * @return Test
+     */
+    public function shuffle(): Test {
         echo __FUNCTION__;
         echo PHP_EOL;
 
@@ -37,7 +47,13 @@ class Test
         return $this;
     }
 
-    public function sort(bool $reverse = FALSE) {
+    /**
+     * Sort
+     *
+     * @param boolean $reverse
+     * @return Test
+     */
+    public function sort(bool $reverse = FALSE): Test {
         echo __FUNCTION__;
         echo $reverse ? ' (inverse)' : NULL;
         echo PHP_EOL;
@@ -49,7 +65,13 @@ class Test
         return $this;
     }
 
-    public function sortByType(bool $reverse = FALSE) {
+    /**
+     * Sort by type
+     *
+     * @param boolean $reverse
+     * @return Test
+     */
+    public function sortByType(bool $reverse = FALSE): Test {
         echo __FUNCTION__;
         echo $reverse ? ' (inverse)' : NULL;
         echo PHP_EOL;
@@ -63,7 +85,14 @@ class Test
         return $this;
     }
 
-    public function filterByType(string $type, bool $reverse = FALSE) {
+    /**
+     * Filter by type
+     *
+     * @param string $type
+     * @param boolean $reverse
+     * @return Test
+     */
+    public function filterByType(string $type, bool $reverse = FALSE): Test {
         echo __FUNCTION__ . " '{$type}'";
         echo $reverse ? ' (inverse)' : NULL;
         echo PHP_EOL;
@@ -81,7 +110,12 @@ class Test
         return $this;
     }
 
-    public function filterByRegex() {
+    /**
+     * Filter by regex
+     *
+     * @return Test
+     */
+    public function filterByRegex(): Test {
         echo __FUNCTION__ . " '{$this->pattern}'";
         echo PHP_EOL;
 
@@ -92,6 +126,12 @@ class Test
         return $this;
     }
 
+    /**
+     * Returns whether the input has more than 3 characters between 'n' and 't'
+     *
+     * @param mixed $var
+     * @return boolean
+     */
     private function goufone_substr_more_than_3_characters_between_n_t(mixed $var): bool {
         $matches = array();
 
