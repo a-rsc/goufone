@@ -64,9 +64,7 @@ function goufone_option_9(array $input): array
  */
 function goufone_array_filter_by_type(mixed $var, string $type): bool
 {
-    // if ($type === 'null') $type = 'NULL';
-    // return gettype($var) === $type;
-    return strcasecmp($var, $type) == 0;
+    return strcasecmp(gettype($var), $type) == 0;
 }
 
 /**
