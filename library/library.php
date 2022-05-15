@@ -78,15 +78,15 @@ function goufone_substr_more_than_3_characters_between_n_t(mixed $var): bool
     $pattern = '/n.{4,}t/i';
     $matches = array();
 
-    if (gettype($var) === 'string')
+    if (strcasecmp(gettype($var), 'string') == 0)
     {
         preg_match($pattern, $var, $matches);
     }
-    else if (gettype($var) === 'array')
+    else if (strcasecmp(gettype($var), 'array') == 0)
     {
         foreach ($var as $value)
         {
-            if (gettype($value) === 'string')
+            if (strcasecmp(gettype($var), 'string') == 0)
             {
                 preg_match($pattern, $value, $matches);
 
